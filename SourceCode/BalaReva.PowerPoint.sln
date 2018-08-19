@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BalaReva.PowerPoint", "BalaReva.PowerPoint\BalaReva.PowerPoint.csproj", "{39529CA2-9F8E-4594-9E30-E4D465B2B832}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BalaReva.PowerPoint.Design", "BalaReva.PowerPoint.Design\BalaReva.PowerPoint.Design.csproj", "{76793156-202A-4B0A-AC46-047E533A0B4F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{39529CA2-9F8E-4594-9E30-E4D465B2B832}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39529CA2-9F8E-4594-9E30-E4D465B2B832}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39529CA2-9F8E-4594-9E30-E4D465B2B832}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39529CA2-9F8E-4594-9E30-E4D465B2B832}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76793156-202A-4B0A-AC46-047E533A0B4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76793156-202A-4B0A-AC46-047E533A0B4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76793156-202A-4B0A-AC46-047E533A0B4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76793156-202A-4B0A-AC46-047E533A0B4F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {680455F9-08F2-4203-BDBE-D9A403E10F99}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://balupad.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = BalaReva.PowerPoint.Design\\BalaReva.PowerPoint.Design.csproj
+		SccProjectName1 = BalaReva.PowerPoint.Design
+		SccLocalPath1 = BalaReva.PowerPoint.Design
+		SccProjectUniqueName2 = BalaReva.PowerPoint\\BalaReva.PowerPoint.csproj
+		SccProjectName2 = BalaReva.PowerPoint
+		SccLocalPath2 = BalaReva.PowerPoint
+	EndGlobalSection
+EndGlobal
