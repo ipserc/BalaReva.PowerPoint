@@ -28,7 +28,7 @@ namespace BalaReva.PowerPoint
         [DisplayName("Slide Index")]
         public InArgument<int> SlideIndex { get; set; } = 1;
 
-       // public InArgument<double> X;
+        // public InArgument<double> X;
         ///float y, float width, float height
 
 
@@ -63,7 +63,7 @@ namespace BalaReva.PowerPoint
             Microsoft.Office.Interop.PowerPoint._Presentation pptPresentation =
                 pptApplication.Presentations.Open(strFile, MsoTriState.msoFalse, MsoTriState.msoFalse, MsoTriState.msoFalse);
 
-            if (pptPresentation.Slides.Count > intSlideIndex)
+            if (pptPresentation.Slides.Count >= intSlideIndex)
             {
                 pptPresentation.Slides[intSlideIndex].Delete();
 
