@@ -8,22 +8,14 @@
 
     [DisplayName("Insert Picture")]
     [Designer(typeof(InsertPictureDesign))]
-    public class InsertPicture : CodeActivity
+    public class InsertPicture : BasePowerPoint
     {
-        [Category("Input")]
-        [RequiredArgument]
-        [Description("Select PPT File with path")]
-        [DisplayName("File Path")]
-        public InArgument<string> FilePath { get; set; }
-
-        [Category("Input")]
-        [RequiredArgument]
+        [Category("Input"), RequiredArgument]
         [Description("Select Image to insert")]
         [DisplayName("Image Path")]
         public InArgument<string> ImagePath { get; set; }
 
-        [Category("Input")]
-        [RequiredArgument]
+        [Category("Input"), RequiredArgument]
         [Description("Slide Index starts with one")]
         [DisplayName("Slide Index")]
         public InArgument<int> SlideIndex { get; set; } = 1;
@@ -32,7 +24,6 @@
         [RequiredArgument]
         public ImageSize PictureSize { get; set; } = new ImageSize();
 
-        private string strFile { get; set; }
         private int intSlideIndex { get; set; }
         private string strImage { get; set; }
 
@@ -40,7 +31,8 @@
         {
             try
             {
-                this.strFile = FilePath.Get(context);
+                base.LoadValues(context);
+
                 this.intSlideIndex = SlideIndex.Get(context);
                 this.strImage = ImagePath.Get(context);
 
@@ -52,57 +44,44 @@
             }
         }
 
-
         private void DoInsertPicture()
         {
-            this.Validate();
+            this.ValidateInserPicture();
 
-            Microsoft.Office.Interop.PowerPoint._Application pptApplication = new Microsoft.Office.Interop.PowerPoint.Application();
-
-            Microsoft.Office.Interop.PowerPoint._Presentation pptPresentation =
-                pptApplication.Presentations.Open(strFile, MsoTriState.msoFalse, MsoTriState.msoFalse, MsoTriState.msoFalse);
-
-            pptPresentation.Slides[intSlideIndex].Shapes.AddPicture
-                (this.strImage, MsoTriState.msoFalse, MsoTriState.msoTrue,
-                PictureSize.Left, PictureSize.Top, PictureSize.Width, PictureSize.Height);
-
-            pptPresentation.Save();
-            pptPresentation.Close();
-            pptApplication.Quit();
-
-            
-            this.releaseObject(pptPresentation);
-            this.releaseObject(pptApplication);
-        }
-
-        private void Validate()
-        {
-            if (!System.IO.File.Exists(strFile))
-            {
-                throw new Exception("File is not exists");
-            }
-
-            else if (!System.IO.File.Exists(strImage))
-            {
-                throw new Exception("Invalid Image Path");
-            }
-        }
-
-
-        private void releaseObject(object obj)
-        {
             try
             {
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
-                obj = null;
+                base.InitPresentation();
+
+                if (base.PptPresentation != null)
+                {
+                    if (base.SlideCount >= intSlideIndex)
+                    {
+                        base.PptPresentation.Slides[intSlideIndex].Shapes.AddPicture
+                        (this.strImage, MsoTriState.msoFalse, MsoTriState.msoTrue,
+                        PictureSize.Left, PictureSize.Top, PictureSize.Width, PictureSize.Height);
+
+                        this.SavePresentation();
+                    }
+                    else
+                    {
+                        base.ClearObject();
+
+                        throw new Exception("Invalid slide index");
+                    }
+                }
             }
             catch (Exception ex)
             {
-                obj = null;
+                base.ClearObject();
+                throw ex;
             }
-            finally
+        }
+
+        private void ValidateInserPicture()
+        {
+            if (!System.IO.File.Exists(strImage))
             {
-                GC.Collect();
+                throw new Exception("Invalid Image Path");
             }
         }
     }

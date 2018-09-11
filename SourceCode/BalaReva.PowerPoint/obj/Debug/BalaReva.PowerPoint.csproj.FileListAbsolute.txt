@@ -1,0 +1,8 @@
+C:\Temp\SourceCode\BalaReva.PowerPoint\BalaReva.PowerPoint\bin\Debug\DLL\Microsoft.Office.Interop.PowerPoint.dll
+C:\Temp\SourceCode\BalaReva.PowerPoint\BalaReva.PowerPoint\bin\Debug\BalaReva.PowerPoint.dll
+C:\Temp\SourceCode\BalaReva.PowerPoint\BalaReva.PowerPoint\bin\Debug\BalaReva.PowerPoint.pdb
+C:\Temp\SourceCode\BalaReva.PowerPoint\BalaReva.PowerPoint\bin\Debug\BalaReva.PowerPoint.Design.dll
+C:\Temp\SourceCode\BalaReva.PowerPoint\BalaReva.PowerPoint\bin\Debug\BalaReva.PowerPoint.Design.pdb
+C:\Temp\SourceCode\BalaReva.PowerPoint\BalaReva.PowerPoint\obj\Debug\BalaReva.PowerPoint.csprojResolveAssemblyReference.cache
+C:\Temp\SourceCode\BalaReva.PowerPoint\BalaReva.PowerPoint\obj\Debug\BalaReva.PowerPoint.dll
+C:\Temp\SourceCode\BalaReva.PowerPoint\BalaReva.PowerPoint\obj\Debug\BalaReva.PowerPoint.pdb

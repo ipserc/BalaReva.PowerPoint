@@ -1,28 +1,20 @@
 ﻿namespace BalaReva.PowerPoint
 {
     using BalaReva.PowerPoint.Design;
-    using Microsoft.Office.Core;
     using System;
     using System.Activities;
     using System.ComponentModel;
+    using PowerPointObj = Microsoft.Office.Interop.PowerPoint;
 
     [DisplayName("Insert Slide")]
     [Designer(typeof(InsertSlideDesign))]
-    public class InsertSlide : CodeActivity
+    public class InsertSlide : BasePowerPoint
     {
-        [Category("Input")]
-        [RequiredArgument]
-        [Description("Select PPT File with path")]
-        [DisplayName("File Path")]
-        public InArgument<string> FilePath { get; set; }
-
-        private string strFile { get; set; }
-
         protected override void Execute(CodeActivityContext context)
         {
             try
             {
-                this.strFile = FilePath.Get(context);
+                base.LoadValues(context);
 
                 this.DoInsertSlide();
             }
@@ -34,50 +26,23 @@
 
         private void DoInsertSlide()
         {
-            this.Validate();
-
-            Microsoft.Office.Interop.PowerPoint._Application pptApplication = new Microsoft.Office.Interop.PowerPoint.Application();
-
-            Microsoft.Office.Interop.PowerPoint._Presentation pptPresentation =
-                pptApplication.Presentations.Open(strFile, MsoTriState.msoFalse, MsoTriState.msoFalse, MsoTriState.msoFalse);
-
-            Microsoft.Office.Interop.PowerPoint.CustomLayout customLayout =
-                pptPresentation.SlideMaster.CustomLayouts[Microsoft.Office.Interop.PowerPoint.PpSlideLayout.ppLayoutText];
-
-            pptPresentation.Slides.AddSlide(pptPresentation.Slides.Count + 1, customLayout);
-
-            pptPresentation.Save();
-            pptPresentation.Close();
-            pptApplication.Quit();
-
-            this.releaseObject(customLayout);
-            this.releaseObject(pptPresentation);
-            this.releaseObject(pptApplication);
-        }
-
-        private void Validate()
-        {
-            if (!System.IO.File.Exists(strFile))
-            {
-                throw new Exception("File is not exists");
-            }
-        }
-
-
-        private void releaseObject(object obj)
-        {
             try
             {
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
-                obj = null;
+                base.InitPresentation();
+
+                if (this.PptPresentation != null)
+                {
+                    PowerPointObj.CustomLayout customLayout = base.GetCustomLayout();
+
+                    this.PptPresentation.Slides.AddSlide(base.SlideCount + 1, customLayout);
+
+                    base.SavePresentation();
+                }
             }
             catch (Exception ex)
             {
-                obj = null;
-            }
-            finally
-            {
-                GC.Collect();
+                base.ClearObject();
+                throw ex;
             }
         }
     }

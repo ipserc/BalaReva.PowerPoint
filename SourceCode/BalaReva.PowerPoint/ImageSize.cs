@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BalaReva.PowerPoint
+﻿namespace BalaReva.PowerPoint
 {
+    using System.ComponentModel;
+
     [TypeConverter(typeof(ExpandableObjectConverter))]
     public class ImageSize : Interfaces.IImageSize
     {

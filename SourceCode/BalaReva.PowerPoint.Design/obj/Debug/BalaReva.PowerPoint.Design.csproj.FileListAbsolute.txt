@@ -1,0 +1,10 @@
+C:\Temp\SourceCode\BalaReva.PowerPoint\BalaReva.PowerPoint.Design\bin\Debug\BalaReva.PowerPoint.Design.dll
+C:\Temp\SourceCode\BalaReva.PowerPoint\BalaReva.PowerPoint.Design\bin\Debug\BalaReva.PowerPoint.Design.pdb
+C:\Temp\SourceCode\BalaReva.PowerPoint\BalaReva.PowerPoint.Design\obj\Debug\InsertPictureDesign.baml
+C:\Temp\SourceCode\BalaReva.PowerPoint\BalaReva.PowerPoint.Design\obj\Debug\InsertSlideDesign.baml
+C:\Temp\SourceCode\BalaReva.PowerPoint\BalaReva.PowerPoint.Design\obj\Debug\InsertPictureDesign.g.cs
+C:\Temp\SourceCode\BalaReva.PowerPoint\BalaReva.PowerPoint.Design\obj\Debug\InsertSlideDesign.g.cs
+C:\Temp\SourceCode\BalaReva.PowerPoint\BalaReva.PowerPoint.Design\obj\Debug\BalaReva.PowerPoint.Design_MarkupCompile.cache
+C:\Temp\SourceCode\BalaReva.PowerPoint\BalaReva.PowerPoint.Design\obj\Debug\BalaReva.PowerPoint.Design.g.resources
+C:\Temp\SourceCode\BalaReva.PowerPoint\BalaReva.PowerPoint.Design\obj\Debug\BalaReva.PowerPoint.Design.dll
+C:\Temp\SourceCode\BalaReva.PowerPoint\BalaReva.PowerPoint.Design\obj\Debug\BalaReva.PowerPoint.Design.pdb

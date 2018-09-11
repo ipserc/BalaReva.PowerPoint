@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\BasePowerPoint.cs" />
     <Compile Include="DeleteSlide.cs" />
     <Compile Include="ImageSize.cs" />
     <Compile Include="InsertPicture.cs" />

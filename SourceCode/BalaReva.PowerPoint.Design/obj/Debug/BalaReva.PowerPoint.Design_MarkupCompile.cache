@@ -4,15 +4,15 @@
 library
 C#
 .cs
-C:\Temp\SourceCode\BalaReva.PowerPoint\BalaReva.PowerPoint.Design\obj\Release\
+C:\Temp\SourceCode\BalaReva.PowerPoint\BalaReva.PowerPoint.Design\obj\Debug\
 BalaReva.PowerPoint.Design
 none
 false
-TRACE
+DEBUG;TRACE
 
 21240782344
 
-71565530788
+3-1123277695
 16-321079973
 InsertPictureDesign.xaml;InsertSlideDesign.xaml;
 
